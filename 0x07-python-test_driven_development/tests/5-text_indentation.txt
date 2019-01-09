@@ -1,0 +1,88 @@
+The "5-text_indentation" module
+======================
+
+Using "text_indentation"
+-------------------
+
+This is a test text file in reStructuredText format.  
+The 5-text_indentation Module:
+
+    >>> text_indentation = __import__("5-text_indentation").text_indentation
+
+Make Sure Documentation Exists:
+
+    >>> module_documentation = __import__("5-text_indentation").__doc__
+    >>> print(len(module_documentation) > 0)
+    True
+    >>> function_documentation = __import__("5-text_indentation").text_indentation.__doc__
+    >>> print(len(function_documentation) > 0)
+    True
+
+Now use it:
+
+>>> text = "Hi. This is a string? Here are some items: dog, cat, rabbit."
+
+>>> text_indentation(text)
+Hi.
+<BLANKLINE>
+This is a string?
+<BLANKLINE>
+Here are some items:
+<BLANKLINE>
+dog, cat, rabbit.
+<BLANKLINE>
+
+>>> text_indentation("hello")
+hello
+>>> text = "     Hi. Ho.    Hey.   "
+>>> text_indentation(text)
+Hi.
+<BLANKLINE>
+Ho.
+<BLANKLINE>
+Hey.
+<BLANKLINE>
+
+>>> t="Hello. : \nI am a string? .\n"
+>>> text_indentation(t)
+Hello.
+<BLANKLINE>
+:
+<BLANKLINE>
+<BLANKLINE>
+I am a string?
+<BLANKLINE>
+.
+<BLANKLINE>
+<BLANKLINE>
+
+>>> t = "    MY SPOON IS TOO BIG!...    I am a apple.\n     cool    "
+>>> text_indentation(t)
+MY SPOON IS TOO BIG!.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+I am a apple.
+<BLANKLINE>
+<BLANKLINE>
+cool    
+>>> text_indentation("")
+>>> text_indentation("       ")
+
+Invalid arguments
+--------------------
+>>> text_indentation(-1)
+Traceback (most recent call last):
+        ...
+TypeError: text must be a string
+
+>>> text_indentation(3.14)
+Traceback (most recent call last):
+        ...
+TypeError: text must be a string
+>>> text_indentation(None)
+Traceback (most recent call last):
+        ...
+TypeError: text must be a string
