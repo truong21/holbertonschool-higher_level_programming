@@ -75,6 +75,7 @@ class Rectangle:
         h = str(self.__height)
         return "Rectangle(" + w + ", " + h + ")"
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """ static method that returns the biggest rectangle based on area """
         if not isinstance(rect_1, Rectangle):
