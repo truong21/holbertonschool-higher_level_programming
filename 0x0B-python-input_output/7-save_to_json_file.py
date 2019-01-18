@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module containing write_file function
+Module containing save_to_json_file function
 """
 import json
 
