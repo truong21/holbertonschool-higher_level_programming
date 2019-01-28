@@ -17,7 +17,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = self.__nb_objects
-    
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """ returns the JSON string representation of list_dictionaries """
@@ -38,7 +38,7 @@ class Base:
                 list_obj.append(cls.to_dictionary(obj))
             with open(filename, mode='w', encoding='utf-8') as f:
                 f.write(cls.to_json_string(list_obj))
-    
+
     @staticmethod
     def from_json_string(json_string):
         """ returns the list of the JSON string representation json_string """
@@ -53,7 +53,7 @@ class Base:
         if cls.__name__ == "Square":
             dummy_cls = cls(1)
         elif cls.__name__ == "Rectangle":
-            dummy_cls = cls(1,1)
+            dummy_cls = cls(1, 1)
         dummy_cls.update(**dictionary)
         return dummy_cls
 

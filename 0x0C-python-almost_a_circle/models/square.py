@@ -19,7 +19,7 @@ class Square(Rectangle):
     def __str__(self):
         """ Overloading the __str__ method """
         return ("[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.x,
-            self.y, self.size))
+                                                          self.y, self.size))
 
     @property
     def size(self):
@@ -42,9 +42,9 @@ class Square(Rectangle):
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-    
+
     def to_dictionary(self):
         """ dictionary representation of a Square """
-        self_dict = {'id': self.id, 'x': self.x, 'y': self.y, 
-            'size' : self.size}
+        self_dict = {'id': self.id, 'x': self.x, 'y': self.y,
+                     'size': self.size}
         return self_dict
