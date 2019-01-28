@@ -45,6 +45,8 @@ class Base:
         json_list = []
         if json_string is None:
             return json_list
+        if len(json_string) == 0:
+            return json_list
         return json.loads(json_string)
 
     @classmethod
