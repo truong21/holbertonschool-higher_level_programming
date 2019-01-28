@@ -48,17 +48,17 @@ class TestRectangleClass(unittest.TestCase):
             Rectangle(1, 1, -1, 0)
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Rectangle(1, 1, 4, -5)
-    
+
     def test_Area(self):
         """ Test for area """
-        r1 = Rectangle(3,2)
+        r1 = Rectangle(3, 2)
         r2 = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r1.area(), 6)
         self.assertEqual(r2.area(), 56)
 
     def test_display(self):
         """ tests display method """
-        r1 = Rectangle(2,2)
+        r1 = Rectangle(2, 2)
         r1_d = "##\n" \
                "##\n"
         saved_stdout = sys.stdout
@@ -87,7 +87,7 @@ class TestRectangleClass(unittest.TestCase):
             self.assertEqual(output, r1_d)
         finally:
             sys.stdout = saved_stdout
-    
+
     def test_str_method(self):
         """ Test if __str__ method prints correct line """
         Base._Base__nb_objects = 0
@@ -118,12 +118,12 @@ class TestRectangleClass(unittest.TestCase):
         r1 = Rectangle(1, 1, 1, 1)
         self.assertEqual(r1.__str__(), "[Rectangle] (1) 1/1 - 1/1")
         self.assertEqual(r1.to_dictionary(), {'id': 1, 'width': 1,
-            'height': 1, 'x': 1, 'y': 1})
+                                              'height': 1, 'x': 1, 'y': 1})
         self.assertIs(type(r1.to_dictionary()), dict)
         r2 = Rectangle(2, 2)
         self.assertEqual(r2.__str__(), "[Rectangle] (2) 0/0 - 2/2")
         self.assertEqual(r2.to_dictionary(), {'id': 2, 'width': 2,
-            'height': 2, 'x': 0, 'y': 0})
+                                              'height': 2, 'x': 0, 'y': 0})
 
 if __name__ == '__main__':
     unittest.main()
