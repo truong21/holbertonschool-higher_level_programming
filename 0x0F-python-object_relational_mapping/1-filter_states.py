@@ -4,21 +4,20 @@ Module listing all states starting with N from the database hbtn_0e_0_usa
 """
 
 
-if __name__ == "__main__":
-    from sys import argv
+if __name__ == '__main__':
     import MySQLdb
+    from sys import argv
 
-    username = argv[1]
-    pwd = argv[2]
-    db_name = argv[3]
-    db = MySQLdb.connect(host="localhost", user=username, port=3306,
-                         passwd=pwd, db=db_name)
-    cur = db.cursor()
-    query = """SELECT id, name FROM states
-               WHERE name like 'N%' ORDER by id ASC"""
-    cur.execute(query)
-    selec_data = cur.fetchall()
-    for item in selec_data:
-        print(item)
-    cur.close()
+    db = MySQLdb.connect(host='localhost', user=argv[1],
+                         passwd=argv[2], db=argv[3], port=3306)
+    cursor = db.cursor()
+    cursor.execute(
+        'SELECT * FROM states'
+        ' WHERE BINARY name LIKE \'N%\''
+        ' ORDER BY id ASC'
+    )
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row)
+    cursor.close()
     db.close()
