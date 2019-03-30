@@ -15,7 +15,9 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", user=username, port=3306,
                          passwd=pwd, db=db_name)
     cur = db.cursor()
-    cur.execute("SELECT id, name FROM states WHERE name like 'N%'")
+    query = """SELECT id, name FROM states
+               WHERE name like 'N%' ORDER by id ASC"""
+    cur.execute(query)
     selec_data = cur.fetchall()
     for item in selec_data:
         print(item)
