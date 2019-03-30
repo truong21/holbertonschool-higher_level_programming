@@ -4,11 +4,10 @@ Module listing all states starting with N from the database hbtn_0e_0_usa
 """
 
 
-import sys
-import MySQLdb
-
-
 if __name__ == "__main__":
+    from sys import argv
+    import MySQLdb
+
     username = sys.argv[1]
     pwd = sys.argv[2]
     db_name = sys.argv[3]
