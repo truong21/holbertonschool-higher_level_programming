@@ -8,9 +8,9 @@ if __name__ == "__main__":
     from sys import argv
     import MySQLdb
 
-    username = sys.argv[1]
-    pwd = sys.argv[2]
-    db_name = sys.argv[3]
+    username = argv[1]
+    pwd = argv[2]
+    db_name = argv[3]
     db = MySQLdb.connect(host="localhost", user=username, port=3306,
                          passwd=pwd, db=db_name)
     cur = db.cursor()
