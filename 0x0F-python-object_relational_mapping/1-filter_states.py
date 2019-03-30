@@ -12,7 +12,7 @@ if __name__ == "__main__":
     username = sys.argv[1]
     pwd = sys.argv[2]
     db_name = sys.argv[3]
-    db = MySQLdb.connect(host="localhost", user=username,
+    db = MySQLdb.connect(host="localhost", user=username, port=3306,
                          passwd=pwd, db=db_name)
     cur = db.cursor()
     cur.execute("SELECT id, name FROM states WHERE name like 'N%'")
