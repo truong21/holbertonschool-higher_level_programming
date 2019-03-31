@@ -15,7 +15,7 @@ if __name__ == "__main__":
     db = argv[3]
 
     engine_str = "mysql://{}:{}@localhost:3306/{}".format(username,
-                                                             passwd, db)
+                                                          passwd, db)
     engine = create_engine(engine_str)
     Base.metadata.bind = engine
 
