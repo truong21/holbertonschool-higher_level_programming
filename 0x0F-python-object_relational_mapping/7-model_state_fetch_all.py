@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     engine_str = "mysql://{}:{}@localhost:3306/{}".format(username,
                                                              passwd, db)
-    engine = create_engine(engine_string)
+    engine = create_engine(engine_str)
     Base.metadata.bind = engine
 
     Session = sessionmaker(bind=engine)
