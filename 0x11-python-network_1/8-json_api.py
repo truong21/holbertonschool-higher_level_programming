@@ -15,7 +15,7 @@ if __name__ == "__main__":
         letter = sys.argv[1]
     except Exception:
         letter = ""
-    
+
     parameters = {'q': letter}
     r = requests.post(url, data=parameters)
     try:
