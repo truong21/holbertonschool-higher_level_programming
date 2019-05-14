@@ -1,0 +1,1 @@
+# javascript - objecs, scopes, closures
