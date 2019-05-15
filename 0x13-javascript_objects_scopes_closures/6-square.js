@@ -1,8 +1,8 @@
 #!/usr/bin/node
 
-const Square_Rec = require('./5-square');
+const SquareRec = require('./5-square');
 
-class Square extends Square_Rec {
+class Square extends SquareRec {
   constructor (size) {
     super(size, size);
   }
